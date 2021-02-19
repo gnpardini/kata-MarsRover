@@ -11,19 +11,15 @@ class Rover:
         }
 
     def moveForward(self):
-        direction = self.direction.asString()
-
-        if direction == "N":
-            self.position.increaseY() 
-
-        elif direction == "S":
-            self.position.decreaseY()
-
-        elif direction == "E":
-            self.position.increaseX()
         
-        else:
-            self.position.decreaseX()
+        self.direction.moveForward(self.position)
+
+        
+    def moveBackward(self):
+
+        self.direction.moveBackward(self.position)
+
+       
         
 
 

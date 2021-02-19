@@ -55,6 +55,23 @@ class MarsRoverShould(unittest.TestCase):
         information = rover.showInformation()
 
         self.assertEqual(information, {"x":11, "y": 5, "direction": "W"})
+
+    def test_decreaseYWhenGoesBackwardsFacingNorth(self):
+        rover = createRover("N")
+
+        rover.moveBackward()
+        information = rover.showInformation()
+
+        self.assertEqual(information, {"x":12, "y": 4, "direction": "N"})
+
+    def test_IncreaseYWhenGoesBackwardsFacingSouth(self):
+        rover = createRover("S")
+
+        rover.moveBackward()
+        information = rover.showInformation()
+
+        self.assertEqual(information, {"x":12, "y": 6, "direction": "S"})
+        
         
 
 if __name__ == '__main__':
